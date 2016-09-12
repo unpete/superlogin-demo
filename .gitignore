@@ -6,3 +6,5 @@ node_modules/
 env.sh
 client/www/lib/
 npm-debug.log
+env.example.cmd
+server/superlogin.config.js

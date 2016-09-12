@@ -84,7 +84,7 @@ angular.module('superloginDemo',
     var superloginConfig = {
       baseUrl: '/auth/',
       checkExpired: 'stateChange',
-      providers: ['facebook', 'google', 'github', 'windowslive', 'linkedin']
+      providers: ['yandex', 'google', 'github']
     };
     superloginProvider.configure(superloginConfig);
 
