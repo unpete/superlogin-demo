@@ -6,6 +6,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 
+var cors = require('cors');
+
 var SuperLogin = require('superlogin');
 var superloginConfig = require('./superlogin.config.js');
 
@@ -18,6 +20,8 @@ var YandexStrategy = require('passport-yandex').Strategy;
 
 
 var app = express();
+
+app.use(cors());
 
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, '../client/www/favicon.ico')));
