@@ -18,6 +18,8 @@ var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var YandexStrategy = require('passport-yandex').Strategy;
 //var LinkedinStrategy = require('passport-linkedin-oauth2').Strategy;
 
+var zd_proxy = require('./metadata/zd_proxy');
+
 
 var app = express();
 
@@ -94,6 +96,9 @@ app.post('/user/destroy', superlogin.requireAuth, function(req, res, next) {
       return next(err);
     });
 });
+
+// подключаем прокси
+zd_proxy(app, superloginConfig);
 
 app.use('*', function(req, res) {
   res.sendFile('index.html', {root: path.join(__dirname, '../client/www')});
